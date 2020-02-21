@@ -1,0 +1,8 @@
+{% extends 'base_html.html' %}
+{% block title %}
+    {{ super() }} 500
+{% endblock %}
+{% block content %}
+    <h1> Ocurrio un error al procesar tu solicitud</h1>
+    <p>{{ error }}</p>
+{% endblock %}

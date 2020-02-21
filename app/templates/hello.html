@@ -1,0 +1,25 @@
+{% extends 'base_html.html' %}
+{% import 'macros.html'  as macros %}
+{% import 'bootstrap/wtf.html' as wtf %}
+{% block title %}
+    {{ super() }}
+    Welcome!
+{% endblock %}
+
+{% block content%}
+    {% if username %}
+            <h1>Welcome, {{ username | capitalize }}</h1>
+        {% endif %}
+        {%  if user_ip %}
+            <h1>Hello World!! tu IP es: {{ user_ip }}</h1>
+        {% else %}
+            <a href="{{ url_for('index')}}"> Go init</a>
+        {%  endif %}
+
+
+    <ul>
+        {% for todos in list_todos %}
+            {{ macros.render_todo(todos) }}
+        {% endfor %}
+    </ul>
+{% endblock %}
